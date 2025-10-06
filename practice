@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sohee’s Hidden Gallery</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: #0b0d10;
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+  }
+
+  .hotspot {
+    position: absolute;
+    left: 60%;
+    top: 45%;
+    width: 220px;
+    height: 160px;
+    cursor: pointer;
+    /* border: 1px dashed rgba(255,255,255,0.2);  ← 위치 확인용 */
+  }
+
+  .reveal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.98);
+    opacity: 0;
+    transition: all 0.4s ease;
+    border-radius: 14px;
+    overflow: hidden;
+    width: 420px;
+    max-width: 90vw;
+    aspect-ratio: 16/10;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+  }
+
+  .reveal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hotspot:hover ~ .reveal {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .hint {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    color: rgba(255,255,255,0.4);
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+  <div class="hint">Hover over the secret area 👀</div>
+
+  <div class="hotspot"></div>
+
+  <div class="reveal">
+    <!-- 여기에 진짜 이미지 주소 붙여넣기 -->
+    <img src="https://i.imgur.com/abc123.jpg" alt="Hidden image">
+  </div>  
+</body>
+</html>
